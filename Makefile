@@ -35,14 +35,14 @@ compile-extended:
 		-e HUGO_VENDOR="$${HUGO_VENDOR:-}" \
 		-e HUGO_TYPE="$${HUGO_TYPE:-standard}" \
 		-e GOARCH="$${GOARCH:-arm64}" \
-		$${GOLANG_IMAGE:-golang:1.20.4-buster} \
+		$${GOLANG_IMAGE:-golang:1.20.5-buster} \
 		/work/bin/compile-extended
 
 verify:
 	@docker run --rm -i \
 		-v $$(pwd):/work \
 		-w /work/src \
-		$${GOLANG_IMAGE:-golang:1.20.4-buster} \
+		$${GOLANG_IMAGE:-golang:1.20.5-buster} \
 		/work/target/bundle/hugo version
 
 copy:
